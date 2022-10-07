@@ -6,17 +6,17 @@ const Table = (props) => {
     <table className="styled-table">
       <thead>
         <tr>
+          <th>Qty</th>
           <th>Card Name</th>
-          <th>Card Set</th>
           <th>Price</th>
         </tr>
       </thead>
       <tbody>
         {cards.map((card) => (
           <tr key={card.id}>
+            <td>{card.quantity}</td>
             <td>{card.name}</td>
-            <td>{card.set}</td>
-            <td>{card.price}</td>
+            <td>{card.usd}</td>
           </tr>
         ))}
       </tbody>
