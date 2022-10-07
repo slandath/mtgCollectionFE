@@ -47,20 +47,39 @@ aside {
   border: 1px solid #000;
   padding: 1rem;
 }
+
 article {
   grid-column: 2 / 3;
   background: #dcedc8;
   border: 1px solid #000;
   padding: 5px;
-  height: 10vh;
-  display: flex;
-  justify-content: space-around;  
 }
 
-.card-preview {
-  border: solid 1px #000;
+.styled-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+.styled-table thead tr {
+  background-color: #000;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
 
 footer {
   grid-column: 1 / -1;
