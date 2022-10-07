@@ -4,7 +4,7 @@ import useFetch from "./useFetch"
 import Table from "./Table";
 
 const Content= () => {
-  const { cards, isPending, error } = useFetch("http://localhost:8000/cards");
+  const { cards, isPending, error } = useFetch("http://localhost:3000/api/v1/cards");
 
   // Passing cards into Table component using props. First conditional displays error.  Second conditional displays loading message while data is fetching.  Third Conditional prevents null error.
   return (
