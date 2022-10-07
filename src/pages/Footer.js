@@ -1,8 +1,11 @@
 export default function Footer() {
+  let repoLink = "https://github.com/slandath/mtgCollection"
   return (
     <footer>
       <p>Created by Rob Kazirut and Tom Slanda</p>
-      <a href="https://github.com/slandath/mtgCollection" target="blank">Github Repo</a>
+      <a href={repoLink}>
+        Github Repo
+      </a>
     </footer>
   );
 }

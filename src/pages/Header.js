@@ -1,8 +1,8 @@
-export default function Footer() {
-    return (
-      <header>
-        <h1>Magic: the Gathering Collection App</h1>
-      </header>
-    );
-  }
-  
+export default function Header() {
+  let title = "Magic: the Gathering Collection App"
+  return (
+    <header>
+      <h1>{ title }</h1>
+    </header>
+  );
+}
