@@ -18,6 +18,28 @@ body {
   text-align: center;
 }
 
+.formInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+form > h1 {
+text-align: center;
+}
+
+.formInput > button {
+  width: 100px;
+  margin: 1.5rem;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0 0 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
 button {
   margin: .5rem;
   padding: .25rem;
@@ -45,7 +67,7 @@ aside {
   grid-row: 2 / 4;
   background: #e1bee7;
   border: 1px solid #000;
-  padding: 1rem;
+  padding: .25rem;
 }
 
 article {
