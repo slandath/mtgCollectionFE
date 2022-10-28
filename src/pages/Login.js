@@ -26,8 +26,14 @@ export default function Login() {
       },
     ];
   
+    const writeToken = () => {
+      window.localStorage.setItem("token", "token-token");
+    }
+
+
     const handleSubmit = (e) => {
       e.preventDefault();
+      writeToken();
     };
   
     const onChange = (e) => {

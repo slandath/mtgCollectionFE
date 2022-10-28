@@ -6,6 +6,7 @@ import Footer from "./pages/Footer";
 import Sidebar from "./pages/Sidebar";
 import Content from "./pages/Content";
 import Login from "./pages/Login";
+import Account from "./pages/Account";
 import "./styles.css";
 
 function App() {
@@ -16,6 +17,14 @@ function App() {
         element={
           <div className="login">
             <Login />
+          </div>
+        }
+      />
+      <Route
+        path="/new"
+        element={
+          <div className="login">
+            <Account />
           </div>
         }
       />
