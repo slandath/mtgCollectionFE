@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
-import Navbar from "./pages/Navbar";
+import Scryfall from "./pages/Scryfall";
+// import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
-import Sidebar from "./pages/Sidebar";
-import Content from "./pages/Content";
+// import Sidebar from "./pages/Sidebar";
+// import Content from "./pages/Content";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
-import "./styles.css";
 
 function App() {
   return (
@@ -33,9 +33,7 @@ function App() {
         element={
           <div className="container">
             <Header />
-            <Navbar />
-            <Sidebar />
-            <Content />
+            <Scryfall />
             <Footer />
           </div>
         }

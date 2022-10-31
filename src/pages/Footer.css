@@ -1,0 +1,11 @@
+footer {
+display: block;
+text-align: center;
+background: gray;
+}
+
+footer > a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
