@@ -1,112 +1,74 @@
-* {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
-  height: 100vh;
 }
 
-.container {
-  background: white;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
-  grid-template-rows: min-content min-content 1fr min-content;
-  gap: 2px;
-  text-align: center;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
 
-.formInput {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-form > h1 {
-text-align: center;
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-.formInput > button {
-  width: 100px;
-  margin: 1.5rem;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-input {
-  padding: 10px;
-  margin: 10px 0 0 10px;
-  border: solid 1px black;
-  border-radius: 5px;
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
-button {
-  margin: .5rem;
-  padding: .25rem;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-header {
-  grid-column: 1 / -1;
-  text-align: center;
-  border: 1px solid #000;
-  background: #ffcdd2;
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-nav {
-  grid-column: 2 / 3;
-  background: #bbdefb;
-  border: 1px solid #000;
-}
-
-ul {
-  list-style-type: none;
-}
-
-aside {
-  grid-column: 1 / 2;
-  grid-row: 2 / 4;
-  background: #e1bee7;
-  border: 1px solid #000;
-  padding: .25rem;
-}
-
-article {
-  grid-column: 2 / 3;
-  background: #dcedc8;
-  border: 1px solid #000;
-  padding: 5px;
-}
-
-.styled-table {
-  border-collapse: collapse;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-  background-color: #000;
-  color: #ffffff;
-  text-align: center;
-}
-
-.styled-table th,
-.styled-table td {
-
-    padding: 12px 15px;
-}
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-footer {
-  grid-column: 1 / -1;
-  background: #ffecb3;
-  border: 1px solid #000;
-  padding: 5px;
-}
-

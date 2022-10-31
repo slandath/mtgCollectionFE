@@ -1,3 +1,6 @@
+import "../styles.css";
+import "./Footer.css";
+
 export default function Footer() {
   let repoLink = "https://github.com/slandath/mtgCollection"
   return (
