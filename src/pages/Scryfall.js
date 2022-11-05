@@ -19,7 +19,7 @@ const Scryfall = () => {
       })
       .then((res) => {
         cardData.push(res);
-        console.log(cardData)
+        console.log(cardData[0].data[0].image_uris.small)
       });
       e.preventDefault();
   };
