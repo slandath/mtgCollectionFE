@@ -3,6 +3,8 @@ import FormInput from "./FormInput";
 
 export default function CreateAccount() {
   const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
     confirmPassword: "",
@@ -11,6 +13,22 @@ export default function CreateAccount() {
   const inputs = [
     {
       id: 1,
+      name: "firstName",
+      type: "text",
+      placeholder: "First Name",
+      label: "First Name",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "lastName",
+      type: "text",
+      placeholder: "Last Name",
+      label: "Last Name",
+      required: true,
+    },
+    {
+      id: 3,
       name: "username",
       type: "text",
       placeholder: "Username",
@@ -18,7 +36,7 @@ export default function CreateAccount() {
       required: true,
     },
     {
-      id: 2,
+      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -26,7 +44,7 @@ export default function CreateAccount() {
       required: true,
     },
     {
-      id: 3,
+      id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
