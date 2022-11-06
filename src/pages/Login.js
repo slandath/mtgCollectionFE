@@ -1,9 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormInput from "./FormInput";
+import "../css/Login.css"
 
 export default function Login() {
+  const navigate = useNavigate();
 
-  // Variable for Form Values 
+  // Clears Token
+
+  window.localStorage.setItem("token", "none");
+
+  // Variable for Form Values
   const [values, setValues] = useState({
     username: "",
     password: "",
@@ -29,21 +36,27 @@ export default function Login() {
     },
   ];
 
-// Variables for Fetch
+  // Variables for Fetch
   const myUrl = "http://localhost:3000/api/v1/login";
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({username: values.username, password: values.password})
+    body: JSON.stringify({
+      username: values.username,
+      password: values.password,
+    }),
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(myUrl, options)
-    .then(res => res.json())
-    .then(res => {window.localStorage.setItem("token", res.token)});
+      .then((res) => res.json())
+      .then((res) => {
+        window.localStorage.setItem("token", res.token);
+        navigate("/");
+      });
   };
 
   const onChange = (e) => {
@@ -51,9 +64,9 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="formInput-container">
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h2 id="formInputTitle">Login</h2>
         {inputs.map((input) => (
           <FormInput
             key={input.id}

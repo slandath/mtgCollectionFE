@@ -1,0 +1,27 @@
+.scryfall-container {
+    display: block;
+}
+
+.scryfall-form {
+    display: flex;
+    justify-content: center;
+}
+.scryfall-header {
+    text-align: center;
+}
+
+.scryfall-form > input {
+    margin-bottom: .25rem;
+    padding: .75rem;
+    border-width: .1rem;
+}
+
+.scryfall-form > button {
+    margin-bottom: .25rem;
+    padding: .75rem;
+    border-width: .1rem;
+}
+
+.scryfall-form > input:focus {
+    outline: none;
+}

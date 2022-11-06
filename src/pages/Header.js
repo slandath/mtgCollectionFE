@@ -1,11 +1,11 @@
 import "../styles.css";
-import "./Header.css";
+import "../css/Header.css";
 
 export default function Header() {
-  let title = "Magic: the Gathering Collection App"
+  let title = "My MTG Collection"
   return (
     <header>
-      <h1 className="header-h1">{ title }</h1>
+      <h1>{ title }</h1>
     </header>
   );
 }
