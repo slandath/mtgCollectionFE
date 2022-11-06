@@ -1,32 +1,35 @@
 import { useState } from "react";
+import CardResults from "./CardResults";
+import mtgBack from "../images/mtgBack.jpg";
 import "../styles.css";
-import "./Scryfall.css";
+import "../css/Scryfall.css";
 
-const Scryfall = () => {
+export default function Scryfall() {
+  // Managing State
   const [card, setCard] = useState("");
-  const cardData = [];
-
   const handleChange = (e) => {
     setCard(e.target.value);
   };
 
-  const pingScryfall = (e) => {
-    const Url = `https://api.scryfall.com/cards/search?q=${card}`;
+  // Empty array to receive Scryfall search results
+  const cardData = [];
 
-    fetch(Url)
+  // Button click function.  Pings the Scryfall endpoint, returns the data as JSON, then pushes the data to cardData.
+  const onSubmit = (e) => {
+    fetch(`https://api.scryfall.com/cards/search?q=${card}`)
       .then((data) => {
         return data.json();
       })
       .then((res) => {
-        cardData.push(res);
-        console.log(cardData[0].data[0].image_uris.small)
+        cardData.push(res.data);
+        console.log(cardData);
       });
-      e.preventDefault();
+    e.preventDefault();
   };
 
   return (
     <div className="scryfall-container">
-      <h1 className="scryfall-header">Search for a card</h1>
+      <h2 className="scryfall-header">Search for a card</h2>
       <form className="scryfall-form">
         <input
           className="scryfall-input"
@@ -35,10 +38,8 @@ const Scryfall = () => {
           onChange={handleChange}
           value={card}
         />
-        <button onClick={pingScryfall}>Submit</button>
+        <button onClick={onSubmit}>Submit</button>
       </form>
     </div>
   );
-};
-
-export default Scryfall;
+}

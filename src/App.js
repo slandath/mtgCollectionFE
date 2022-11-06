@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
 import Scryfall from "./pages/Scryfall";
+import CardResults from "./pages/CardResults";
 // import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
 // import Sidebar from "./pages/Sidebar";
@@ -16,14 +17,16 @@ function App() {
         path="/login"
         element={
           <div className="login">
+            <Header />
             <Login />
+            <Footer />
           </div>
         }
       />
       <Route
         path="/new"
         element={
-          <div className="login">
+          <div className="account">
             <Account />
           </div>
         }
@@ -34,6 +37,7 @@ function App() {
           <div className="container">
             <Header />
             <Scryfall />
+            <CardResults />
             <Footer />
           </div>
         }
