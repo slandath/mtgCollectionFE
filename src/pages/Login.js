@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import FormInput from "./FormInput";
-import "../css/Login.css"
+import "../css/Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -36,27 +37,26 @@ export default function Login() {
     },
   ];
 
-  // Variables for Fetch
-  const myUrl = "http://localhost:3000/api/v1/login";
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: values.username,
-      password: values.password,
-    }),
+  // Axios variables
+
+  let myUrl = `${process.env.REACT_APP_APIURL}/api/v1/login`;
+
+  let body = {
+    username: values.username,
+    password: values.password,
   };
 
-  const handleSubmit = (e) => {
+  let headers = {
+    "Content-Type": "application/json",
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch(myUrl, options)
-      .then((res) => res.json())
-      .then((res) => {
-        window.localStorage.setItem("token", res.token);
-        navigate("/");
-      });
+    let data = await axios
+      .post(myUrl, body, headers)
+      .then((response) => response.data);
+    localStorage.setItem("token", data.token);
+    navigate("/");
   };
 
   const onChange = (e) => {

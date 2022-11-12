@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
 import Scryfall from "./pages/Scryfall";
-import CardResults from "./pages/CardResults";
+import CardResults from "./pages/CardResults"
 // import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
 // import Sidebar from "./pages/Sidebar";
@@ -27,7 +27,9 @@ function App() {
         path="/new"
         element={
           <div className="account">
+            <Header />
             <Account />
+            <Footer />
           </div>
         }
       />
@@ -37,7 +39,6 @@ function App() {
           <div className="container">
             <Header />
             <Scryfall />
-            <CardResults />
             <Footer />
           </div>
         }

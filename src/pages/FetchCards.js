@@ -1,6 +1,6 @@
 // Importing useState to monitor for changes.  Importing useEffect to trigger an action on render
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Custom hooks must start with "use"
 const useFetchCards= (url) => {

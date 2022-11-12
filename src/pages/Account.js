@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import FormInput from "./FormInput";
 
 export default function CreateAccount() {
@@ -71,7 +71,7 @@ export default function CreateAccount() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>Create Account</h1>
+        <h2 id="formInputTitle">Create Account</h2>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
