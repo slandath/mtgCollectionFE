@@ -1,5 +1,6 @@
 .scryfall-container {
     display: block;
+    height: 100%;
 }
 
 .scryfall-form {
@@ -11,17 +12,52 @@
 }
 
 .scryfall-form > input {
-    margin-bottom: .25rem;
-    padding: .75rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
     border-width: .1rem;
+    border-radius: 2rem 0 0 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-width: 0px;
+    font-weight: bold;
+    width: 15.94rem;
+    background-color: 	#E8E8E8;
+    
 }
 
 .scryfall-form > button {
-    margin-bottom: .25rem;
+    margin-bottom: 2rem;
     padding: .75rem;
-    border-width: .1rem;
+    border-radius: 0 2rem 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-width: 0px;
+    background-color: #9fbfdf;
+    font-weight: bold;
+    width: 5.31rem;
+
 }
 
 .scryfall-form > input:focus {
     outline: none;
+}
+
+img, .card-body {
+    max-width: 21.25rem;
+    margin: 0 auto;
+    margin-bottom: .9rem;
+    border-radius: .9rem;
+
+}
+
+.cardButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 15.93rem;
+    padding: .5rem;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-width: 0px;
+    background-color: #9fbfdf;
+    font-weight: bold;
 }
